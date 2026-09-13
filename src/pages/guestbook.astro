@@ -1,1 +1,75 @@
-serverURL: 'https://mergeconflict-ten.vercel.app/',
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="COMMS_CHANNEL | Merge Conflict" description="코모란트 통신망">
+  
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 flex flex-col min-h-[80vh]">
+    
+    <!-- 방명록 헤더 영역 -->
+    <div class="mb-8 font-mono">
+      <h3 class="text-xs font-bold text-[#8b5cf6] tracking-widest border-b border-[#8b5cf6]/30 pb-2 mb-4">
+        [ COMMS_CHANNEL : OPEN ]
+      </h3>
+      <h1 class="text-3xl font-bold tracking-tight text-foreground mb-3">GUESTBOOK</h1>
+      <p class="text-sm opacity-70">
+        로그인 없이 닉네임과 비밀번호를 입력하여 작성할 수 있습니다.<br/>
+      </p>
+    </div>
+
+    <!-- Waline 방명록 컨테이너 -->
+    <div class="w-full bg-card/30 border border-border/20 rounded-xl p-5 md:p-8 shadow-sm">
+      <div id="waline"></div>
+    </div>
+
+  </div>
+
+</BaseLayout>
+
+<!-- Waline CSS 및 JS 로드 -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+  init({
+    el: '#waline',
+    // 완벽하게 수정된 서버 주소
+    serverURL: 'https://mergeconflict-ten.vercel.app', 
+    dark: 'html[class="dark"]', 
+    login: 'disable', 
+    search: false,
+    emoji: [
+      'https://unpkg.com/@waline/emojis@1.2.0/weibo',
+    ],
+  });
+</script>
+
+<!-- 코모란트 보라색 터미널 테마 커스텀 CSS -->
+<style is:global>
+  :root {
+    --waline-theme-color: #8b5cf6 !important;
+    --waline-active-color: #7c3aed !important;
+    --waline-font-size: 0.875rem !important;
+  }
+  
+  .dark {
+    --waline-white: #0a0a0a !important;
+    --waline-light-grey: #171717 !important;
+    --waline-dark-grey: #a3a3a3 !important;
+    --waline-text-color: rgba(255, 255, 255, 0.8) !important;
+    --waline-border-color: rgba(255, 255, 255, 0.1) !important;
+    --waline-bgcolor: rgba(255, 255, 255, 0.05) !important;
+    --waline-bgcolor-light: rgba(255, 255, 255, 0.02) !important;
+    --waline-info-bgcolor: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  #waline .wl-btn {
+    border-radius: 4px !important;
+    font-family: monospace !important;
+    letter-spacing: 0.1em;
+  }
+  
+  #waline .wl-editor {
+    font-family: monospace !important;
+  }
+</style>
