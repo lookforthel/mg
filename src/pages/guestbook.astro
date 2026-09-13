@@ -34,11 +34,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
   init({
     el: '#waline',
-    // 완벽하게 수정된 서버 주소
     serverURL: 'https://mergeconflict-ten.vercel.app', 
     dark: 'html[class="dark"]', 
     login: 'disable', 
     search: false,
+    meta: ['nick'], // 👈 이 줄을 추가하면 이메일과 웹사이트 칸이 사라지고 오직 '닉네임'만 남습니다!
     emoji: [
       'https://unpkg.com/@waline/emojis@1.2.0/weibo',
     ],
