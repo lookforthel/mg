@@ -451,7 +451,7 @@ hr {
 }
 
 hr::before {
-  content: '✵   ✵   ✵' !important; /* 👈 원하시는 기호로 언제든 수정하세요! */
+  content: '+   +   +' !important; /* 👈 원하시는 기호로 언제든 수정하세요! */
   color: #6b7280 !important; /* 약간 어두운 회색 */
   font-size: 1.1rem !important;
   letter-spacing: 0.5em !important; /* 기호 사이 간격 넓게 */
