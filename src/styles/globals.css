@@ -529,3 +529,7 @@ blockquote {
   color: inherit;
   opacity: 0.8; /* 전체적으로 튀지 않게 톤 다운 */
 }
+
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
