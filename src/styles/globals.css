@@ -479,13 +479,13 @@ del, s {
   text-decoration-color: #6b7280;
 }
 
-/* 2. 인용문 (마크다운 >) - 통신 기록이나 타인의 대사 연출 */
+/* 수정된 인용문 (마크다운 >) - 소설 본문에 어울리게 배경 제거 및 최소화 */
 blockquote {
-  border-left: 4px solid #8b5cf6; /* 왼쪽 보라색 선 */
-  background: rgba(139, 92, 246, 0.05); /* 은은한 보라색 배경 */
-  padding: 1rem 1.5rem;
+  border-left: 3px solid rgba(139, 92, 246, 0.5); /* 얇고 은은해진 보라색 선 */
+  background: transparent !important; /* 튀는 배경색 완벽 제거 */
+  padding: 0.2rem 0 0.2rem 1.2rem; /* 위아래 여백을 줄이고 글자를 선에 가깝게 */
   margin: 1.5rem 0;
-  border-radius: 0 4px 4px 0;
+  opacity: 0.85; /* 글자 톤을 살짝 낮춰서 대사나 독백 느낌을 줌 */
 }
 
 /* 3. 디바이더 (마크다운 *** 또는 ---) - 챕터 분리선 */
@@ -527,4 +527,16 @@ hr::after {
   color: #10b981; 
   font-family: monospace;
   font-weight: bold;
+}
+
+/* 작가 코멘트 / 잡담용 얕은 배경 박스 */
+.author-note {
+  margin: 4rem 0 2rem 0; /* 본문이 끝난 뒤 넉넉하게 띄워줌 */
+  padding: 1.2rem 1.5rem;
+  background-color: rgba(156, 163, 175, 0.1); /* 다크/라이트 어디서든 얕게 깔리는 마법의 반투명 회색 */
+  border: 1px solid rgba(156, 163, 175, 0.15); /* 아주 연한 테두리로 박스 형태만 잡아줌 */
+  border-radius: 8px; /* 부드러운 둥근 모서리 */
+  font-size: 0.9em; /* 본문보다 글씨를 살짝 작게 */
+  color: inherit;
+  opacity: 0.8; /* 전체적으로 튀지 않게 톤 다운 */
 }
