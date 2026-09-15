@@ -448,19 +448,25 @@ html:not(.dark):not([data-theme="dark"]) body::before {
   text-align: center !important;
   margin: 4rem 0 !important;
   background: transparent !important;
-  
-  /* 👇 Tailwind가 숨겨버린 높이와 넘침 방지 해제 (가장 중요) */
   height: 24px !important; 
   overflow: visible !important; 
 }
 
+/* 과거의 END_OF_RECORD 잔재 완벽하게 소거 */
+.prose hr::after, hr::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* 새로운 + + + 디바이더 적용 */
 .prose hr::before, hr::before {
   content: '+   +   +' !important;
-  color: #6b7280 !important; 
+  color: #6b7280 !important; /* 라이트/다크 양쪽에서 다 잘 보이는 어두운 회색 */
   font-size: 1.2rem !important;
   letter-spacing: 0.5em !important; 
   display: block !important;
-  line-height: 24px !important; /* 상자 높이와 맞춰서 정중앙 정렬 */
+  line-height: 24px !important; 
+  background: transparent !important;
 }
 
 
@@ -492,27 +498,6 @@ blockquote {
   opacity: 0.85; /* 글자 톤을 살짝 낮춰서 대사나 독백 느낌을 줌 */
 }
 
-/* 3. 디바이더 (마크다운 *** 또는 ---) - 챕터 분리선 */
-hr {
-  border: none;
-  border-top: 1px dashed rgba(139, 92, 246, 0.4); /* 보라색 점선 */
-  margin: 4rem 0;
-  position: relative;
-}
-
-hr::after {
-  content: '// END_OF_RECORD //'; /* 선 가운데 시스템 텍스트 삽입 */
-  position: absolute;
-  top: -0.7rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #0a0a0a; /* 사이트 배경색으로 글자 뒤를 덮음 */
-  padding: 0 1rem;
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: rgba(139, 92, 246, 0.6);
-  letter-spacing: 0.1em;
-}
 
 
 /* =========================================
