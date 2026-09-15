@@ -443,19 +443,24 @@ html:not(.dark):not([data-theme="dark"]) body::before {
 /* ========================================================
    소설 본문 구분선 (***) 커스텀 디자인
 ======================================================== */
-hr {
-  border: none !important; /* 기본으로 나오는 밋밋한 실선 완벽하게 숨기기 */
+.prose hr, hr {
+  border: none !important;
   text-align: center !important;
-  margin: 4rem 0 !important; /* 위아래 여백 넉넉하게 (원하시면 숫자 조절 가능) */
-  background: transparent !important; /* 배경 투명하게 */
+  margin: 4rem 0 !important;
+  background: transparent !important;
+  
+  /* 👇 Tailwind가 숨겨버린 높이와 넘침 방지 해제 (가장 중요) */
+  height: 24px !important; 
+  overflow: visible !important; 
 }
 
-hr::before {
-  content: '+   +   +' !important; /* 👈 원하시는 기호로 언제든 수정하세요! */
-  color: #6b7280 !important; /* 약간 어두운 회색 */
-  font-size: 1.1rem !important;
-  letter-spacing: 0.5em !important; /* 기호 사이 간격 넓게 */
+.prose hr::before, hr::before {
+  content: '+   +   +' !important;
+  color: #6b7280 !important; 
+  font-size: 1.2rem !important;
+  letter-spacing: 0.5em !important; 
   display: block !important;
+  line-height: 24px !important; /* 상자 높이와 맞춰서 정중앙 정렬 */
 }
 
 
