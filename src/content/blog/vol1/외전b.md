@@ -1,0 +1,8 @@
+---
+title: "외전 B"
+description: "Volume 1"
+pubDate: 2026-09-09
+author: "DJG"
+volume: 1
+chapter: 12
+---
