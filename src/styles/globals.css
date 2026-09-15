@@ -481,7 +481,6 @@ del, s {
 
 /* 수정된 인용문 (마크다운 >) - 소설 본문에 어울리게 배경 제거 및 최소화 */
 blockquote {
-  border-left: 3px solid rgba(139, 92, 246, 0.5); /* 얇고 은은해진 보라색 선 */
   background: transparent !important; /* 튀는 배경색 완벽 제거 */
   padding: 0.2rem 0 0.2rem 1.2rem; /* 위아래 여백을 줄이고 글자를 선에 가깝게 */
   margin: 1.5rem 0;
@@ -522,9 +521,9 @@ hr::after {
   font-weight: bold;
 }
 
-/* 초록색/보라색 시스템 안내 (정상 작동) */
+/* 보라색 시스템 안내 (정상 작동) */
 .sys-info {
-  color: #10b981; 
+  color: #4a148c; 
   font-family: monospace;
   font-weight: bold;
 }
