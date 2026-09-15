@@ -443,15 +443,88 @@ html:not(.dark):not([data-theme="dark"]) body::before {
 /* ========================================================
    소설 본문 구분선 (***) 커스텀 디자인
 ======================================================== */
-.novel-text hr {
-  border: none !important; /* 기본 실선 숨기기 */
+hr {
+  border: none !important; /* 기본으로 나오는 밋밋한 실선 완벽하게 숨기기 */
   text-align: center !important;
-  margin: 4rem 0 !important; /* 위아래 여백 넉넉하게 */
+  margin: 4rem 0 !important; /* 위아래 여백 넉넉하게 (원하시면 숫자 조절 가능) */
+  background: transparent !important; /* 배경 투명하게 */
 }
 
-.novel-text hr::before {
-  content: '✵    ✵    ✵'; /* 👈 원하시는 기호로 언제든 수정하세요! */
+hr::before {
+  content: '✵   ✵   ✵' !important; /* 👈 원하시는 기호로 언제든 수정하세요! */
   color: #6b7280 !important; /* 약간 어두운 회색 */
   font-size: 1.1rem !important;
-  letter-spacing: 0.5em; /* 기호 사이 간격 넓게 */
+  letter-spacing: 0.5em !important; /* 기호 사이 간격 넓게 */
+  display: block !important;
+}
+
+
+/* =========================================
+   [ CORMORANT ARCHIVE : 텍스트 렌더링 규칙 ]
+   ========================================= */
+
+/* 1. 기본 마크다운 문법 강화 */
+strong, b {
+  color: #a78bfa; /* **굵은 글씨** : 테마색(연보라)으로 눈에 띄게 */
+  font-weight: 700;
+}
+
+em, i {
+  color: #9ca3af; /* *기울임* : 회색으로 처리해서 독백이나 속마음 연출 */
+  font-style: italic;
+}
+
+del, s {
+  color: #6b7280; /* ~~취소선~~ : 글자는 어둡게 */
+  text-decoration-color: #6b7280;
+}
+
+/* 2. 인용문 (마크다운 >) - 통신 기록이나 타인의 대사 연출 */
+blockquote {
+  border-left: 4px solid #8b5cf6; /* 왼쪽 보라색 선 */
+  background: rgba(139, 92, 246, 0.05); /* 은은한 보라색 배경 */
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* 3. 디바이더 (마크다운 *** 또는 ---) - 챕터 분리선 */
+hr {
+  border: none;
+  border-top: 1px dashed rgba(139, 92, 246, 0.4); /* 보라색 점선 */
+  margin: 4rem 0;
+  position: relative;
+}
+
+hr::after {
+  content: '// END_OF_RECORD //'; /* 선 가운데 시스템 텍스트 삽입 */
+  position: absolute;
+  top: -0.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0a0a0a; /* 사이트 배경색으로 글자 뒤를 덮음 */
+  padding: 0 1rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: rgba(139, 92, 246, 0.6);
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================
+   [ 특수 연출용 커스텀 HTML 클래스 ]
+   ========================================= */
+
+/* 붉은색 시스템 경고 */
+.sys-warn {
+  color: #ef4444; 
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/* 초록색/보라색 시스템 안내 (정상 작동) */
+.sys-info {
+  color: #10b981; 
+  font-family: monospace;
+  font-weight: bold;
 }
