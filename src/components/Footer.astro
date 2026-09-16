@@ -55,24 +55,34 @@ const containerClass =
 
   </div>
 
-<!-- 지나가는 사람들을 위한 하트 버튼 존 -->
-<script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_cda7cd96a31cf5b65bc11905444c07"></script>
-<!-- minimal settings -->
-<div data-lyket-type="clap" data-lyket-id="my-first-post"></div>
+<!-- 지나가는 사람들을 위한 하트/박수 버튼 존 -->
+<div class="flex flex-col items-center justify-center my-12 opacity-80 hover:opacity-100 transition-opacity" style="min-height: 80px;">
+  <p class="text-xs text-gray-500 mb-3 font-mono tracking-widest text-center">
+    [ SYSTEM : 열람 확인 ]
+  </p>
+  
+  <!-- 박수 버튼 껍데기 (Medium 템플릿) -->
+  <div data-lyket-type="clap" 
+       data-lyket-id="cormorant-global-clap" 
+       data-lyket-namespace="footer" 
+       data-lyket-template="medium" 
+       data-lyket-color-primary="#8b5cf6">
+  </div>
+</div>
 
-<!-- with namespace -->
-<div
-  data-lyket-type="clap"
-  data-lyket-id="my-second-post"
-  data-lyket-namespace="blog"
-></div>
-
-<!-- with non-default template -->
-<div
-  data-lyket-type="clap"
-  data-lyket-id="my-third-post"
-  data-lyket-namespace="blog"
-  data-lyket-template="medium"
-></div>
+<!-- Astro를 속이는 자바스크립트 강제 주입 -->
+<script>
+  // 화면이 다 렌더링되고 나서 안전하게 Lyket 스크립트를 불러옵니다.
+  setTimeout(() => {
+    // 중복 실행 방지
+    if (!document.getElementById('lyket-script')) {
+      const script = document.createElement('script');
+      script.id = 'lyket-script';
+      // Lyket 최신 빌드 스크립트 호출
+      script.src = 'https://unpkg.com/@lyket/widget@latest/build/lyket.js?apiKey=pt_cda7cd96a31cf5b65bc11905444c07';
+      document.body.appendChild(script);
+    }
+  }, 500); // 0.5초 대기 후 실행
+</script>
 
 </footer>
