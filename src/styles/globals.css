@@ -511,10 +511,18 @@ blockquote {
 
 /* 보라색 시스템 안내 (정상 작동) */
 .sys-info {
-  color: #4a148c; 
-  font-family: monospace;
-  font-style: italic;
-}
+  display: block !important; /* 가운데 정렬을 위해 한 줄을 통째로 사용 */
+  text-align: center !important;
+  
+  /* 기계적인 느낌만 살리는 폰트 세팅 */
+  font-family: 'Consolas', 'Courier New', monospace !important; 
+  color: #8b5cf6 !important; /* 다크/라이트 모드 모두에서 눈이 편안한 보라색 */
+  font-weight: 600 !important; /* 본문보다 살짝 두껍게 */
+  font-size: 0.95em !important;
+  letter-spacing: 0.05em !important; /* 자간을 살짝 벌려 삭막한 느낌 부여 */
+  
+  /* 거슬리지 않는 최소한의 상하 여백 */
+  margin: 1.5rem 0 !important;
 
 /* 작가 코멘트 / 잡담용 얕은 배경 박스 */
 .author-note {
