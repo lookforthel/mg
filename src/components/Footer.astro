@@ -54,4 +54,23 @@ const containerClass =
     </div>
 
   </div>
+
+<!-- 지나가는 사람들을 위한 하트 버튼 존 -->
+<div class="flex flex-col items-center justify-center my-12 opacity-80 hover:opacity-100 transition-opacity">
+  <p class="text-xs text-gray-500 mb-2 font-mono tracking-widest">
+    [ SYSTEM: 흔적 남기기 ]
+  </p>
+  
+  <!-- Lyket 버튼 본체 -->
+  <div data-lyket-type="like" 
+       data-lyket-id="cormorant-global-heart" 
+       data-lyket-namespace="footer" 
+       data-lyket-template="twitter" 
+       data-lyket-color-primary="#8b5cf6">
+  </div>
+</div>
+
+<!-- Lyket 작동 스크립트 (복사해둔 API 키를 끝에 넣으세요!) -->
+<script is:inline src="https://unpkg.com/@lyket/widget@latest/build/lyket.js?apiKey=pt_cda7cd96a31cf5b65bc11905444c07"></script>
+
 </footer>
