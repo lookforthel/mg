@@ -476,7 +476,6 @@ html:not(.dark):not([data-theme="dark"]) body::before {
 
 /* 1. 기본 마크다운 문법 강화 */
 strong, b {
-  color: #a78bfa; /* **굵은 글씨** : 테마색(연보라)으로 눈에 띄게 */
   font-weight: 700;
 }
 
@@ -506,16 +505,16 @@ blockquote {
 
 /* 붉은색 시스템 경고 */
 .sys-warn {
-  color: #ef4444; 
+  color: #8b0000; 
   font-family: monospace;
-  font-weight: bold;
+  font-style: italic;
 }
 
 /* 보라색 시스템 안내 (정상 작동) */
 .sys-info {
   color: #4a148c; 
   font-family: monospace;
-  font-weight: bold;
+  font-style: italic;
 }
 
 /* 작가 코멘트 / 잡담용 얕은 배경 박스 */
