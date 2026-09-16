@@ -56,18 +56,23 @@ const containerClass =
   </div>
 
 <!-- 지나가는 사람들을 위한 하트 버튼 존 -->
-<div class="flex flex-col items-center justify-center my-12 opacity-80 hover:opacity-100 transition-opacity" style="min-height: 80px;">
-  <p class="text-xs text-gray-500 mb-3 font-mono tracking-widest">
-    흔적 남기기
-  </p>
-  
-  <!-- Lyket 버튼 본체 (template과 크기 확보) -->
-  <div data-lyket-type="like" 
-       data-lyket-id="cormorant-global-heart" 
-       data-lyket-namespace="footer" 
-       data-lyket-template="simple" 
-       data-lyket-color-primary="#8b5cf6">
-  </div>
-</div>
+<script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_cda7cd96a31cf5b65bc11905444c07"></script>
+<!-- minimal settings -->
+<div data-lyket-type="clap" data-lyket-id="my-first-post"></div>
+
+<!-- with namespace -->
+<div
+  data-lyket-type="clap"
+  data-lyket-id="my-second-post"
+  data-lyket-namespace="blog"
+></div>
+
+<!-- with non-default template -->
+<div
+  data-lyket-type="clap"
+  data-lyket-id="my-third-post"
+  data-lyket-namespace="blog"
+  data-lyket-template="medium"
+></div>
 
 </footer>
