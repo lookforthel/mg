@@ -480,7 +480,6 @@ strong, b {
 }
 
 em, i {
-  color: #9ca3af; /* *기울임* : 회색으로 처리해서 독백이나 속마음 연출 */
   font-style: italic;
 }
 
