@@ -1,1 +1,86 @@
+---
+// src/pages/lore.astro
+import Layout from '../layouts/Layout.astro'; // 경로가 다르다면 작가님 환경에 맞게 수정해주세요!
+---
 
+<Layout title="LORE | Cormorant Archive">
+  <!-- 전체 컨테이너 (읽기 편한 최대 너비 설정) -->
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    
+    <!-- 🗂️ 최상단 헤더: 메모리 덤프 진입 연출 -->
+    <header class="mb-20 text-center">
+      <p class="font-mono text-sm text-[#8b5cf6] mb-4 animate-pulse">
+        > SYSTEM OVERRIDE: INITIATING MEMORY_DUMP...
+      </p>
+      <h1 class="text-4xl font-bold tracking-widest mb-4">
+        [ MEMORY_DUMP ]
+      </h1>
+      <p class="text-gray-500 text-sm">
+        접근 권한 확인됨. 미분류 데이터 및 비하인드 로그를 렌더링합니다.
+      </p>
+    </header>
+
+    <!-- ⏳ 세로형 타임라인 (간격 넉넉하게 space-y-32) -->
+    <div class="relative border-l border-[#8b5cf6]/40 ml-4 md:ml-6 space-y-32 py-8">
+      
+      <!-- 📌 1. 과거 설정 / 썰 (마크다운 사용 예시) -->
+      <div class="relative pl-6 md:pl-8">
+        <div class="absolute w-3 h-3 bg-[#8b5cf6] rounded-full -left-[6.5px] top-1.5 shadow-[0_0_8px_rgba(139,92,246,0.8)]"></div>
+        <div class="font-mono text-sm text-[#8b5cf6] mb-2 tracking-widest">
+          [ ACCESSED : D-400 ]
+        </div>
+        <h3 class="text-xl font-bold mb-3">테스트</h3>
+        
+        <div class="text-gray-600 dark:text-gray-300 leading-relaxed space-y-4">
+ 
+          여기에 긴 텍스트가 입력되겟지 
+
+        </div>
+      </div>
+
+      <!-- 📌 2. 작가 코멘트 (Root 관리자 연출) -->
+      <div class="relative pl-6 md:pl-8">
+        <div class="absolute w-3 h-3 bg-[#8b5cf6] rounded-full -left-[6.5px] top-1.5 shadow-[0_0_8px_rgba(139,92,246,0.8)]"></div>
+        <div class="font-mono text-sm text-[#8b5cf6] mb-2 tracking-widest">
+          [ ACCESSED : D-150 ]
+        </div>
+        <h3 class="text-xl font-bold mb-3">뭐뭐 사건</h3>
+        
+        <div class="text-gray-600 dark:text-gray-300 leading-relaxed space-y-4">
+
+          여기도 아마도 긴 텍스트 테스트용 더미 여기도 아마도 긴 텍스트 테스트용 더미 여기도 아마도 긴 텍스트 테스트용 더미 여기도 아마도 긴 텍스트 테스트용 더미 여기도 아마도 긴 텍스트 테스트용 더미 여기도 아마도 긴 텍스트 테스트용 더미 여기도 아마도 긴 텍스트 테스트용 더미 
+
+        </div>
+
+        <!-- 작가 후기 전용 박스 -->
+        <div class="mt-8 border-t border-dashed border-[#8b5cf6]/50 pt-4 bg-[#8b5cf6]/5 p-4 rounded">
+          <p class="font-mono text-xs text-[#8b5cf6] mb-2 font-bold">
+            [ ROOT 권한 접근 : 수석 연구원 코멘트 ]
+          </p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">
+            여긴 머라구 뜨려나?? 
+          </p>
+        </div>
+      </div>
+
+      <!-- 📌 3. 시스템 경고 / 에러 연출 (긴장감 고조) -->
+      <div class="relative pl-6 md:pl-8">
+        <!-- 에러 상황을 위한 붉은색 포인트 -->
+        <div class="absolute w-3 h-3 bg-red-500 rounded-full -left-[6.5px] top-1.5 shadow-[0_0_8px_rgba(239,68,68,0.8)]"></div>
+        <div class="font-mono text-sm text-red-500 mb-2 tracking-widest">
+          [ ERROR : DATA CORRUPTED ]
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-red-500">손상된 기록</h3>
+        
+        <div class="text-gray-600 dark:text-gray-300 leading-relaxed space-y-4 opacity-80">
+
+          <span class="font-mono bg-red-500/10 text-red-400 px-1">0x88F2A</span> 해당 구간의 데이터는 보안을 위해 삭제되었습니다. 잔존하는 텍스트 조각을 렌더링합니다... 
+          <br><br>
+          "우리가 그때 다른 선택을 했더라면..." 
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+</Layout>
